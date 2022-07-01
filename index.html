@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button onclick="moveRight()">moveRight</button>
+<button onclick="moveLeft()">moveLeft</button>
+<button onclick="moveDown()">moveDown</button>
+<button onclick="moveUp()">moveUp</button>
+<img id="dung" style="position: relative;top: 0px;left: 0px" src="img/img_1.png" width="300" height="300">
+<img id="diep" style="position: relative;top: 500px;left: 500px" src="img/img.png" width="300" height="300">
+
+<script>
+    let imgdung=document.getElementById('dung')
+    let imgdiep=document.getElementById('diep')
+    function moveRight() {
+       imgdung.style.left=parseInt(imgdung.style.left) +50 +"px"
+     }
+    function moveLeft() {
+      imgdung.style.left = parseInt(imgdung.style.left) - 50 + "px"
+    }
+    function moveDown() {
+       imgdung.style.top= parseInt(imgdung.style.top) +50+"px"
+
+    }
+     function moveUp() {
+       imgdung.style.top=parseInt(imgdung.style.top) -50+"px"
+     }
+     let xdung=document.getElementById('dung')
+    let xdiep=document.getElementById('diep')
+     function keyboar(evt) {
+      switch (evt.keyCode) {
+        case 37:
+          moveLeft();
+          break;
+        case 39:
+          moveRight();
+          break;
+        case 38:
+          moveUp();
+          break;
+        case 40:
+          moveDown();
+          break;
+        }
+     }
+     window.addEventListener('keydown',keyboar);
+
+</script>
+</body>
+</html>
